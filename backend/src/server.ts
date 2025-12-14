@@ -11,17 +11,21 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// In Vercel, /api prefix is already handled by routing, so we use relative paths
+// For local development, we keep /api prefix
+const apiPrefix = process.env.VERCEL ? '' : '/api';
+
 // Middleware
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Routes
-app.use('/api/auth', authRoutes);
-app.use('/api/sweets', sweetRoutes);
+app.use(`${apiPrefix}/auth`, authRoutes);
+app.use(`${apiPrefix}/sweets`, sweetRoutes);
 
 // Health check endpoint
-app.get('/health', (req, res) => {
+app.get(`${apiPrefix}/health`, (req, res) => {
   res.json({ status: 'OK', message: 'Sweet Shop API is running' });
 });
 
@@ -44,9 +48,9 @@ export const startServer = async () => {
   }
 };
 
-// Only start server when not running tests so Jest can import app without
-// binding the HTTP port or connecting automatically to the DB.
-if (process.env.NODE_ENV !== 'test') {
+// Only start server when not running tests and not on Vercel
+// Vercel handles serverless functions, so we don't need to start a server
+if (process.env.NODE_ENV !== 'test' && !process.env.VERCEL) {
   startServer();
 }
 
