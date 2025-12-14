@@ -1,5 +1,5 @@
 import { Response } from 'express';
-import Sweet, { ISweet } from '../models/Sweet';
+import Sweet from '../models/Sweet';
 import { AuthRequest } from '../middleware/auth';
 import { validationResult } from 'express-validator';
 
