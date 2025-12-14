@@ -175,7 +175,7 @@ npm run test:coverage
    - Branches: 43.93%
    - Functions: 73.68%
    - Lines: 82.64%
-```
+
 ## Screenshots of the Running application
 1. **Adding a new Sweet**: [Screenshots/Add new sweet.png](Screenshots/Add%20new%20sweet.png)
 2. **Admin Dashboard**: [Screenshots/Admin Dashboard.png](Screenshots/Admin%20Dashboard.png)
@@ -205,6 +205,44 @@ npm run test:coverage
    - Delete sweets
    - Restock inventory
 
+
+
+## My AI Usage
+
+In building and refining this Sweet Shop Management System, I actively leveraged multiple AI developer tools to accelerate implementation, improve test coverage, and resolve complex issues efficiently. This section details my AI-assisted development journey.
+
+### AI Tools Used
+
+I utilized the following AI tools throughout the project:
+- **Cursor AI** (Primary IDE Assistant)
+- **GitHub Copilot** (Code Completion & Suggestions)
+- **ChatGPT** (Guidance)
+
+### How I Used AI Tools
+
+#### 1. **GitHub Copilot - Code Generation & Boilerplate**
+
+**Test Scaffolding:**
+- Generated Jest test file templates for authentication and sweets endpoints
+- Created test cases for CRUD operations, including edge cases like empty arrays and invalid IDs
+- Suggested test data factories and helper functions for consistent test setup
+
+**Example:** Copilot helped generate the initial test structure for `auth.test.ts`, including registration, login, and validation test cases, which I expanded with specific assertions.
+
+#### 2. **ChatGPT - Suggestions and doubts**
+
+- Helped me to clear some doubts in the code and I asked for necessary changes that can be useful in application
+
+**Example:** MongoDB connection string issues
+
+
+#### 4. **Cursor AI - Integrated Development Assistance**
+
+- Helped resolve TypeScript compilation errors and type mismatches
+- Genetrated the architecture of the project.
+- Helped in connection with database 
+- Helped me in designing the basic frontend of the application.
+
 ## Development Notes
 
 ### TDD Approach
@@ -229,4 +267,3 @@ npm run test:coverage
 ## License
 
 ISC
-
