@@ -166,6 +166,33 @@ Generate coverage report:
 npm run test:coverage
 ```
 
+### Test Report (latest)
+- Command: `npm run test:coverage`
+- Date: 2025-12-14
+- Result: 29 tests passed, 0 failed
+- Coverage summary:
+   - Statements: 82.69%
+   - Branches: 43.93%
+   - Functions: 73.68%
+   - Lines: 82.64%
+```
+## Screenshots of the Running application
+1. **Adding a new Sweet**: [Screenshots/Add new sweet.png](Screenshots/Add%20new%20sweet.png)
+2. **Admin Dashboard**: [Screenshots/Admin Dashboard.png](Screenshots/Admin%20Dashboard.png)
+3. **Login Page**: [Screenshots/Login Page.png](Screenshots/Login%20Page.png)
+4. **Signup Page**: [Screenshots/Signup page.png](Screenshots/Signup%20page.png)
+5. **Filter by name**: [Screenshots/Filter by name.png](Screenshots/Filter%20by%20name.png)
+6. **Filter by category**: [Screenshots/Filter by category.png](Screenshots/Filter%20by%20category.png)
+7. **Filter by Min Prize**: [Screenshots/Filter by Min Prize.png](Screenshots/Filter%20by%20Min%20Prize.png)
+8. **Filter by Max Prize**: [Screenshots/Filter by Max Prize.png](Screenshots/Filter%20by%20Max%20Prize.png)
+9. **No Sweet found by Category**: [Screenshots/No Sweet found by Category.png](Screenshots/No%20Sweet%20found%20by%20Category.png)
+10. **Out of Stock**: [Screenshots/Out of Stock.png](Screenshots/Out%20of%20Stock.png)
+11. **Edit sweet details**: [Screenshots/Edit sweet details.png](Screenshots/Edit%20sweet%20details.png)
+12. **Delete Sweet**: [Screenshots/Delete Sweet.png](Screenshots/Delete%20Sweet.png)
+13. **Restock Working**: [Screenshots/Restock Working.png](Screenshots/Restock%20Working.png)
+
+
+
 ## Usage
 
 1. **Register/Login**: Create an account or login with existing credentials

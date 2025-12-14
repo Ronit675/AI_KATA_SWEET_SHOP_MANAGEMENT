@@ -32,7 +32,7 @@ app.use((err: any, req: express.Request, res: express.Response, next: express.Ne
 });
 
 // Connect to database and start server
-const startServer = async () => {
+export const startServer = async () => {
   try {
     await connectDatabase();
     app.listen(PORT, () => {
@@ -44,7 +44,11 @@ const startServer = async () => {
   }
 };
 
-startServer();
+// Only start server when not running tests so Jest can import app without
+// binding the HTTP port or connecting automatically to the DB.
+if (process.env.NODE_ENV !== 'test') {
+  startServer();
+}
 
 export default app;
 

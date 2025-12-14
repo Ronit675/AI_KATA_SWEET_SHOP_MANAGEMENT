@@ -1,3 +1,4 @@
+import { describe, it, expect, beforeAll, afterAll, beforeEach } from '@jest/globals';
 import request from 'supertest';
 import mongoose from 'mongoose';
 import app from '../server';
@@ -12,7 +13,7 @@ describe('Sweets API', () => {
   let adminId: string;
 
   beforeAll(async () => {
-    const mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/sweet-shop-test';
+    const mongoUri= process.env.MONGODB_URI || 'mongodb://localhost:27017/sweet-shop-test';
     await mongoose.connect(mongoUri);
   });
 
@@ -24,6 +25,7 @@ describe('Sweets API', () => {
 
   beforeEach(async () => {
     await Sweet.deleteMany({});
+    await User.deleteMany({});
     
     // Create regular user
     const user = await User.create({

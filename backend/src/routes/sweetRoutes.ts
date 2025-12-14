@@ -16,10 +16,21 @@ const router = Router();
 /**
  * Validation rules for creating/updating sweets
  */
-const sweetValidation = [
+const createSweetValidation = [
   body('name').trim().notEmpty().withMessage('Name is required'),
   body('category').trim().notEmpty().withMessage('Category is required'),
   body('price').isFloat({ min: 0 }).withMessage('Price must be a positive number'),
+  body('quantity')
+    .optional()
+    .isInt({ min: 0 })
+    .withMessage('Quantity must be a non-negative integer'),
+];
+
+// For updates, fields are optional but, if provided, must be valid
+const updateSweetValidation = [
+  body('name').optional().trim().notEmpty().withMessage('Name is required'),
+  body('category').optional().trim().notEmpty().withMessage('Category is required'),
+  body('price').optional().isFloat({ min: 0 }).withMessage('Price must be a positive number'),
   body('quantity')
     .optional()
     .isInt({ min: 0 })
@@ -44,8 +55,8 @@ router.get('/search', searchSweets);
 router.post('/:id/purchase', purchaseSweet);
 
 // Admin-only routes
-router.post('/', isAdmin, sweetValidation, createSweet);
-router.put('/:id', isAdmin, sweetValidation, updateSweet);
+router.post('/', isAdmin, createSweetValidation, createSweet);
+router.put('/:id', isAdmin, updateSweetValidation, updateSweet);
 router.delete('/:id', isAdmin, deleteSweet);
 router.post('/:id/restock', isAdmin, restockValidation, restockSweet);
 
